@@ -55,7 +55,7 @@ namespace Innergy.Parsing
             if (lineProperties.Length != expectedPropertiesLength)
             {
                 throw new ArgumentException(
-                    "Invalid input, line must consist with material name, id and warehouse stock separated with semicolons."
+                    "Invalid input, line must consist of material name, id and warehouse stock separated by semicolons."
                 );
             }
         }
@@ -65,7 +65,10 @@ namespace Innergy.Parsing
             int expectedWarehouseNameAndQuantityLength = 2;
             if (warehouseNameAndQuantity.Length != expectedWarehouseNameAndQuantityLength)
             {
-                throw new ArgumentException("Invalid input.");
+                throw new ArgumentException(
+                    "Invalid input, warehouse stock must consist of warehouse name and materials quantity " +
+                    "separated by vertical bar."
+                );
             }
         }
 
